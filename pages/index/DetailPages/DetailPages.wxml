@@ -1,0 +1,42 @@
+<!--pages/index/DetailPages/DetailPages.wxml-->
+<view class="DetailPages">
+  <!-- 歌单头部 -->
+<view class="DetailPagesTitle">
+  <image src="{{musicList.coverImgUrl}}" ></image>
+<view class="musicListTitle">
+   <text>{{musicList.name}}</text>
+  <view class="creator"> 
+  <image src="{{musicList.creator.avatarUrl}}" class="user"></image>
+  <text>{{musicList.creator.nickname}}</text>
+  </view>
+  <text>{{musicList.description}}</text>
+</view>
+</view>
+
+<!-- 评论 -->
+<view class="comment">
+<view>收藏</view>
+<view>评论</view>
+<view>分享</view>
+</view>
+
+<!-- 歌单列表 -->
+<view class="recentlyPlay" >
+  <view class="recentlyPlayHeader">
+  <text class="iconfont icon-bofang"></text>
+  <text bindtap="playMusicList">播放全部({{musicDetailList.length}})</text>
+  <text  class="iconfont icon-guanbi"></text>
+  </view>
+  <!-- 歌曲列表 -->
+  <view>
+    <view class="recentlyPlayList" wx:for="{{musicDetailList}}" wx:key='id' id="{{item.id}}" bindtap="PlayMusic">
+      <view class="musicName">
+        <text>{{item.name}}</text>
+      <text>{{item.ar[0].name}}</text>
+      </view>
+      <text class="iconfont icon-diandian"></text>
+     </view>
+  </view>
+     <!-- <view wx:else>暂无播放记录</view> -->
+</view>
+</view>

@@ -1,0 +1,76 @@
+<!--pages/personal/personal.wxml-->
+<!-- 我的个人主页 -->
+<view class="User">
+ <view class="centent">
+  <view class="register">
+               <image src="{{userInfo.avatarUrl?userInfo.avatarUrl:'/static/image/xihongshi.jpg'}}"></image>
+               <text bindtap="{{userInfo.nickname?'': 'toLogin'}}" >{{userInfo.nickname?userInfo.nickname:'立即登录 > '}}</text>
+   </view>
+
+   <!-- 个人模块 -->
+   <view class="userModule">
+     <view class="minModule">
+     <text class="iconfont icon-bendi"></text>
+     <text>本地/下载</text>
+     </view>
+     <view class="minModule">
+     <text class="iconfont icon-yunpanlogo-_huabanfuben"></text>
+     <text>云盘</text>
+     </view>
+     <view class="minModule">
+     <text class="iconfont icon-yigoumai"></text>
+     <text>已购</text>
+     </view>
+     <view class="minModule" bindtap="recentlyPlay">
+     <text class="iconfont icon-bofang1"></text>
+     <text>最近播放</text>
+     </view>
+     <view class="minModule">
+     <text class="iconfont icon-haoyou"></text>
+     <text>我的好友</text>
+     </view>
+     <view class="minModule">
+     <text class="iconfont icon-shoucang1"></text>
+     <text>收藏和赞</text>
+     </view>
+     <view class="minModule">
+     <text class="iconfont icon-weibozhiye-KQ"></text>
+     <text>我的博客</text>
+     </view>
+     <view class="minModule">
+     <text class="iconfont icon-yingyong"></text>
+     <text>音乐应用</text>
+     </view>
+ 
+   </view>
+
+   <!-- 喜欢的音乐模块 -->
+   <view class="likeMusic" bindtap="userList" id="{{userMusciList[0].id}}">
+      <view class="MusicData">
+            <image src="{{userMusciList[0].coverImgUrl}}"></image>
+           <view>
+            <text>我喜欢的音乐</text>
+            <text>{{userMusciList[0].trackCount}}首,已下载0首</text></view>
+      </view>
+   </view>
+
+
+  <!-- 用户歌单 -->
+  <view class="tui-fixed-y">
+    <view  wx:key='index' class="navItem">
+      <text class="musicListTitle" id="NAV{{index}}">我的歌单</text>
+      <view class="UserMusciList" >
+         <view class="MusicData" wx:for="{{userMusciList}}" wx:key='id' bindtap="userList" id="{{item.id}}">
+           <image src="{{item.coverImgUrl}}"></image>
+          <view>
+           <text>{{item.name}}</text>
+           <text>{{item.trackCount}}首</text>
+           </view>
+     </view>
+ </view>
+    </view>
+</view>
+  
+
+ </view>
+</view>

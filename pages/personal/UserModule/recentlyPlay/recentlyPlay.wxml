@@ -1,0 +1,19 @@
+<!--pages/personal/UserModule/recentlyPlay/recentlyPlay.wxml-->
+<view class="recentlyPlay" >
+  <view class="recentlyPlayHeader">
+  <text class="iconfont icon-bofang"></text>
+  <text>播放全部</text>
+  <text  class="iconfont icon-guanbi"></text>
+  </view>
+  <!-- 歌曲列表 -->
+  <view  wx:if="{{recentlyList.length}}">
+    <view class="recentlyPlayList" wx:for="{{recentlyList}}" wx:key='id'>
+      <view class="musicName">
+        <text>{{item.song.name}}</text>
+      <text>{{item.song.ar[0].name}}-{{item.song.al.name}}</text>
+      </view>
+      <text class="iconfont icon-diandian"></text>
+     </view>
+  </view>
+     <!-- <view wx:else>暂无播放记录</view> -->
+</view>

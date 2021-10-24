@@ -1,0 +1,48 @@
+<!--pages/video/songDetail/songDetail.wxml-->
+<!-- 歌单详情页 -->
+<!--pages/village/village.wxml-->
+<view class="songDetailContainer">
+<view class="author">{{song.ar[0].name}}</view> 
+<view class="circle"></view>
+<image src="/static/image/song/needle.png" class="needle {{isPlay && 'needleRotate'}}"  bindtap="none"></image>
+
+<view class="discContainer {{isPlay && 'discAnimation'}}"  bindtap="none">
+<image src="/static/image/song/disc.png" class="disc"></image>
+<image src="{{song.al.picUrl}}" class="musicImage"></image>
+</view>
+
+<!-- 进度条 -->
+<view class="progressControl">
+<text>{{currentTime}}</text>
+<view class="barControl">
+<!-- 实时进度条 -->
+<view class="audioCurrenTime" style="width:{{currentWidth + 'rpx'}}">
+<view class="audioCircle"></view>
+</view>
+</view>
+<text>{{durationTime}}</text>
+</view>
+<!-- 底部控制区域 -->
+<view class="bottomControl">
+<text  class="iconfont icon-hanhan-01-01"></text>
+<text  class="iconfont icon-hanhan-01" bindtap="handSwitch" id="pre"></text>
+<text  class="iconfont {{isPlay?'icon-pause':'icon-jiediankaishi'}}" bindtap="musicPlay"></text>
+<text  class="iconfont icon-hanhan-011" bindtap="handSwitch" id="next"></text>
+<text class="iconfont icon-bofangliebiao" bindtap="musicList">
+</text>
+</view>
+<!-- 播放列表 -->
+<view class="musiclist {{isMusicList?'block':'none'}}" >
+<view class="musciListTitle">
+  <text>当前播放:({{musicListNum}})</text>
+  <text class="iconfont icon-shanchu"></text>
+</view>
+<scroll-view class="songList"  scroll-y>
+  <view class="musicDetail {{item.id==song.id?'red':''}}" wx:for="{{musicList}}" wx:key='index' bindtap="musicPlay2"  id="{{item.id}}" data-index="{{index}}">
+  <text>{{item.name}}</text>
+  <text>-{{item.ar[0].name}}</text>
+  <text class="iconfont icon-guanbi" bindtap="deleteMusic"  data-index="{{index}}"></text>
+</view>
+</scroll-view>
+</view>
+</view>

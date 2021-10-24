@@ -1,0 +1,30 @@
+<view id="square">
+<view class="header">
+<text> 歌单广场</text>
+<scroll-view scroll-x enable-flex scroll-with-animation class="squareScroll">
+<view wx:for="{{categories}}" wx:key='id' class="scroll-item {{item.id==categoryIndex?'active':''}}" bindtap="giveIndex" data-name='{{item.name}}' id="{{item.id}}">
+{{item.name}}
+</view>
+</scroll-view>
+</view>
+
+<view class="body">
+<!--主体 -->
+<scroll-view scroll-y enable-flex class="category" 
+bindscrolltolower='handTopLower'>
+ <view class="category-item" wx:for="{{category}}" wx:key='id' bindtap="DetailPage" id="{{item.id}}">
+ <!-- 图片 -->
+ <view >
+ <image src="{{item.coverImgUrl}}">
+  <text class="category-play iconfont icon-jiediankaishi">{{item.playCount}}</text>
+  </image>
+ </view>
+<!-- 标题 -->
+<p class="title">
+{{item.name}}
+</p>
+ </view>
+</scroll-view>
+</view>
+
+</view>

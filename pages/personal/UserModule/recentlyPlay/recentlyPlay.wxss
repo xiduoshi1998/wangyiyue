@@ -1,0 +1,51 @@
+/* pages/personal/UserModule/recentlyPlay/recentlyPlay.wxss */
+.recentlyPlay{
+  margin: 0rpx 20rpx;
+}
+.recentlyPlayHeader{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 10rpx;
+  font-weight: 700;
+}
+.recentlyPlayHeader text:nth-child(1){
+ padding: 20rpx;
+ padding-left: 0rpx;
+ font-size: 40rpx;
+ color: red;
+
+}
+.recentlyPlayHeader text:nth-child(3){
+  float: right;
+  font-size: 30rpx;
+}
+.recentlyPlayList{
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  margin-top:20rpx ;
+}
+.musicName{
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  width: 50%;
+}
+.musicName text:nth-child(1){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.musicName text:last-child{
+     font-size: 24rpx;
+     color: #ccc;
+     font-weight: 400;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+}
+.recentlyPlayList .icon-diandian{
+  position: absolute;
+  right: 0px;
+  margin-right:20rpx ;
+}

@@ -1,0 +1,143 @@
+/* pages/index/DetailPages/DetailPages.wxss */
+
+.DetailPages{
+  height: 100%;
+  margin: 0 20rpx;
+}
+.DetailPagesTitle{
+position: relative;
+display: flex;
+align-items: center;
+  height: 300rpx;
+}
+.DetailPagesTitle:after {
+  width: 140%;
+  height:100%;
+  position: absolute;
+  left: -20%;
+  top: 0;
+  z-index: -1;
+  content: "";
+  border-radius: 0 0 25% 25%;
+  /* background-image: linear-gradient(to top,#355da1  0%,#333d41 100%); */
+  background-color: #ccc;
+}
+
+.DetailPagesTitle image{
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 20rpx;
+}
+
+/* 歌单名字 标题 作者 */
+.musicListTitle {
+  display: flex;
+  flex-direction: column;
+  height: 200rpx;
+  width: 500rpx;
+  padding-left: 24rpx;
+}
+.musicListTitle :nth-child(1){
+  font-size: 26rpx;
+  color: #ffffff;
+}
+.musicListTitle :last-child{
+  padding-top:5rpx ;
+  font-size: 26rpx;
+  color: #666;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* 这里是超出几行省略 */
+  overflow: hidden;    word-break: break-all;
+}
+.creator{
+margin-top:30rpx ;
+}
+.creator :nth-child(2){
+  display: inline-block;
+  color: #666;
+}
+.creator :nth-child(1){
+  display: inline-block;
+  margin-right:20rpx ;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+}
+
+/* 评论 */
+.comment{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  bottom: 40rpx;
+box-shadow: 2px 2px 10px  rgba(0, 0, 0, .1);
+  margin: 0 auto;
+  width: 400rpx;
+  height: 80rpx;
+  background-color: #ffffff;
+  border-radius: 50rpx;
+}
+.comment view{
+width: 30%;
+text-align: center;
+font-size: 24rpx;
+border-right: 2rpx solid #cccccc;
+}
+.comment view:last-child{
+  border-right: 0;
+}
+
+/* 歌单列表 */
+.recentlyPlay{
+  margin: 0rpx 20rpx;
+}
+.recentlyPlayHeader{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 10rpx;
+  font-weight: 700;
+}
+.recentlyPlayHeader text:nth-child(1){
+ padding: 20rpx;
+ padding-left: 0rpx;
+ font-size: 40rpx;
+ color: red;
+
+}
+.recentlyPlayHeader text:nth-child(3){
+  float: right;
+  font-size: 30rpx;
+}
+.recentlyPlayList{
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  margin-top:20rpx ;
+}
+.musicName{
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  width: 50%;
+}
+.musicName text:nth-child(1){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.musicName text:last-child{
+     font-size: 24rpx;
+     color: #ccc;
+     font-weight: 400;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+}
+.recentlyPlayList .icon-diandian{
+  position: absolute;
+  right: 0px;
+  margin-right:20rpx ;
+}

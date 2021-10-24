@@ -1,0 +1,20 @@
+<!--pages/recommendSong/recommendSong.wxml-->
+<view class="recentlyPlay" >
+  <!-- 头部 -->
+  <view class="recentlyPlayHeader">
+  <text class="iconfont icon-bofang"></text>
+  <text bindtap="pushMusicList">播放全部</text>
+  <text  class="iconfont icon-guanbi"></text>
+  </view>
+  <!-- 歌曲列表 -->
+  <scroll-view scroll-y class="recomMendSongList2">
+    <view class="recentlyPlayList" wx:for="{{recommendSongList}}" wx:key='id' bindtap="toSongDetail" data-song="{{item}}" data-index='{{index}}'>
+    <image src="{{item.al.picUrl}}"></image>
+      <view class="musicName">
+        <text>{{item.name}}</text>
+      <text>{{item.ar[0].name}}--{{item.al.name}}</text>
+      </view>
+      <text class="iconfont icon-diandian"></text>
+     </view>
+  </scroll-view>
+</view>

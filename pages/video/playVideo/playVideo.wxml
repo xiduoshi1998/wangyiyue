@@ -1,0 +1,2 @@
+<!--pages/video/playVideo/playVideo.wxml-->
+<video src="{{videoUrl.url}}" class="videoPlay"	autoplay></video>

@@ -1,0 +1,45 @@
+<!--pages/video/video.wxml-->
+<view class="videoBackground">
+  <view class="videoContainer">
+<!-- 搜索框 -->
+<view class="videoSearch" bindtap="toSearch">
+<text class="iconfont icon-sousuo" ></text>
+</view>
+  
+  <!-- 导航区域 
+   scroll-into-view 与子元素保持一致的id 可以滚动到子元素
+  scroll-with-animation 滚动的时候有过渡效果
+  -->
+  <scroll-view scroll-x enable-flex class="navScroll" scroll-into-view="NAV{{navIndex}}" scroll-with-animation> 
+  <view class="navItem" wx:for="{{videoGroupList}}" wx:key='id' id="NAV{{item.id}}" >
+   <view class="navContent {{navIndex===item.id?'active':''}}" bindtap="getIndex" id="{{item.id}}">
+   {{item.name}}
+   </view>
+  </view>
+  </scroll-view>
+
+<!-- 视频 -->
+ <scroll-view scroll-y class="videoScroll" 
+ bindrefresherrefresh='handleRefresher' 
+ refresher-enabled
+ refresher-triggered='{{isTriggered}}'
+ bindscrolltolower='handTopLower'
+ >
+ <view class="aa">
+  <view class="video" wx:for="{{VideoList}}"  wx:key='id' bindtap="playVideo" id="{{item.data.vid}}">
+  <!-- 用户头像 -->
+  <image src="{{item.data.creator.avatarUrl}}" class="User"></image>
+  <image src="{{item.data.coverUrl}}"></image>
+ <text>{{item.data.title}}</text>
+
+ <!--点赞量 以及视频类型 -->
+ <view class="videoLabel">
+ <text class="iconfont icon-dianzan">{{item.data.praisedCount}}</text>
+ <text>{{item.data.videoGroup[1].name}}</text>
+ </view>
+ </view>
+ </view>
+ </scroll-view>
+</view>
+
+</view>

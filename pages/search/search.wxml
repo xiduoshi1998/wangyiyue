@@ -1,0 +1,47 @@
+<!-- 搜搜区域 -->
+<view class="searchContainer">
+<!-- 头部 -->
+<view class="header">
+ <view class="searchInput">
+ <text class="iconfont icon-sousuo"></text>
+<input type="text" placeholder="{{placeholderContent}}" placeholder-class="placeholder"  bindinput="handleInput" /> 
+ </view>
+ <text class="cancel">取消</text>
+</view>
+<!-- 搜索展示区 -->
+<block wx:if="{{searchList.length}}">
+  <view class="showSearch">
+<view class="searchContent">搜索内容:{{searchContent}}</view>
+<view class="searchList">
+<view class="searchItem" wx:for="{{searchList}}" wx:key='id'>
+<text class="iconfont icon-sousuo" ></text>
+<text class="content">{{item.name}}</text>
+</view>
+</view>
+</view>
+
+</block>
+<!-- 热搜榜 -->
+<block wx:else>
+<!-- 搜索历史 -->
+<!-- <view class="history">
+<view class="title">历史:</view>
+<view class="historyItem">喜羊羊</view>
+<text class="delete icon-guanbi iconfont"></text>
+</view> -->
+
+
+  <view class="hotContainer">
+<view>热搜榜</view>
+<view class="hotList" >
+<view class="hontItem" wx:for="{{hotList}}" wx:key='score'>
+<text class="order {{index<3?'red':''}}">{{index+1}}</text>
+<text class="{{index<3?'weight':''}}">{{item.searchWord}}</text>
+<image src="{{item.iconUrl}}" wx:if="{{item.iconUrl}}"></image>
+</view>
+
+</view>
+</view>
+</block>
+</view>
+

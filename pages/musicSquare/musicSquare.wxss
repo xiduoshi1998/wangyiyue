@@ -1,0 +1,69 @@
+
+.active{
+border-bottom: 6rpx solid red;
+}
+.header{
+  position: sticky;
+  top: 0rpx;
+  right: 0rpx;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 10;
+  padding: 0 20rpx;
+  background-color: #ffffff;
+}
+.body{
+  padding: 0rpx 20rpx;
+}
+.squareScroll{
+  display: flex;
+  height: 60rpx;
+  white-space: nowrap;
+  text-align: center;
+ line-height: 60rpx;
+ margin-top:20rpx ;
+
+}
+
+.category{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  height: calc(100vh - 110rpx);
+}
+
+.category-item{
+  margin-top: 30rpx;
+  width: 32%;
+}
+.category-item image{
+  width: 100%;
+  height:226rpx;
+  border-radius: 30rpx;
+}
+.category-play{
+  position: relative;
+  bottom: 220rpx;
+  left: 50rpx;
+  padding:6rpx 10rpx;
+  font-size: 26rpx;
+  border-radius: 20rpx;
+  color: #ffffff;
+  background-color: #333333;
+}
+
+.category-item .title{
+  font-size: 26rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.scroll-item{
+  font-size: 25rpx;
+  padding:0 10rpx;
+}

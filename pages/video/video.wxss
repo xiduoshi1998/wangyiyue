@@ -1,0 +1,97 @@
+/* pages/video/video.wxss */
+.videoBackground{
+  background-color:rgb(245, 245, 245)
+}
+.videoContainer{
+  padding-top:20rpx ;
+  margin: 0 20rpx;
+}
+/* 搜索框 */
+.videoSearch{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius:30rpx ;
+  margin-bottom:20rpx ;
+  background-color: #ffffff;
+  color: #ccc;
+}
+.videoSearch text{
+ margin-left:30rpx ;
+font-size: 40rpx;
+}
+
+/* 视频导航 */
+.navScroll{
+  display: flex;
+  height: 80rpx;
+  white-space: nowrap;
+}
+.navContent{
+  padding: 0 18rpx;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.navItem .active{
+font-weight:700 ;
+}
+
+/* 视频页 */
+.videoScroll{
+  height: calc(100vh - 190rpx);
+}
+.aa{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.video{
+  position: relative;
+  width: 330rpx;
+  height: 440rpx;
+  margin:10rpx ;
+  border-radius: 20rpx;
+  background-color: #fff
+}
+.video image{
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  width: 100%;
+  height: 70%;
+}
+.video text{
+margin: 10rpx 20rpx;
+  font-size: 22rpx;
+ display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+/* 播放类型 以及点赞量 */
+.videoLabel{
+display: flex;
+align-items: center;
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+}
+.videoLabel text:nth-child(1){
+ font-size: 25rpx;
+ color: #999;
+}
+.videoLabel text:nth-child(2){
+  position: absolute;
+  right: 0;
+  font-size: 18rpx;
+  color: #999;
+}
+.video .User{
+  position: absolute;
+  top: 55%;
+  left: 20rpx;
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 100%;
+  border: 4rpx solid #fff;
+}
